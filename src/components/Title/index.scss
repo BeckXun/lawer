@@ -1,0 +1,17 @@
+.common-title {
+    // padding-left: 12px;
+    display: flex;
+    align-items: center;
+
+    &-icon {
+        width: 6px;
+        height: 20px;
+        background-color: rgba(255, 152, 0, 1);
+        margin-right: 12px;
+    }
+
+    &-content {
+        font-size: 18px;
+        line-height: 20px;
+    }
+}

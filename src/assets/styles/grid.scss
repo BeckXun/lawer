@@ -1,0 +1,93 @@
+// 常用栅格布局
+.flex-column-center-center {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-wrap-start-center {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-start-start {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: start;
+}
+
+.flex-start-center {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-start-center-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-center-center {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-center-start {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: start;
+}
+
+.flex-between-center {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-between-center-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-between-start {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.flex-end-center {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}

@@ -1,0 +1,31 @@
+.my-drawer {
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.my-drawer .am-drawer-sidebar {
+  background-color: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.my-drawer .am-drawer-sidebar .am-list {
+  width: 300px;
+  padding: 0;
+}
+
+.icon-wrapper {
+  height: 100%;
+  padding: 0 15px;
+  margin-right: -15px;
+  display: flex;
+  align-items: center;
+}
+
+.am-navbar {
+  border-bottom: 1px solid #ddd;
+}
+
+.header-share {
+  font-family: 'iconfont';
+  font-size: 20px;
+}
