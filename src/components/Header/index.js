@@ -115,7 +115,7 @@ class Header extends PureComponent {
                 <NavBar
                     mode="light"
                     icon={icon}
-                    onLeftClick={() => window.history.back()}
+                    onLeftClick={() => this.props.history.goBack()}
                     rightContent={rightContent}
                 >
                     {title}

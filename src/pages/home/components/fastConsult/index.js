@@ -8,9 +8,6 @@ class FastConsult extends PureComponent {
         type: '请选择',
         way: '请选择',
     }
-    back() {
-        window.history.back();
-    }
     slect = () => {
         this.setState()
     }

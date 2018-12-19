@@ -20,12 +20,12 @@ class Home extends Component {
                 <div className="hot-consult">
                     <Title content="热点咨询" />
                     {
-                        this.props.hotConsults.map(item => (
+                        this.props.hotConsults.map((item, index) => (
                             <ConsultHeader
-                                key={item.id}
-                                desc={item.desc}
-                                city={item.city}
-                                type={item.type}
+                                key={index}
+                                desc={item.get('desc')}
+                                city={item.get('city')}
+                                type={item.get('type')}
                                 reply={this.reply}
                             />
                         ))

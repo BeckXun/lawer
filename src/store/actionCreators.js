@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import { SET_HOT_CONSULT, TOGGLE_HEADER_POP } from "./actionTypes";
+import { SET_HOT_CONSULT, TOGGLE_HEADER_POP, CHECK_LOGIN } from "./actionTypes";
 import { getHotConsult } from '@/utils/api';
 
 export const getHotConsultAction = payload => (async (dispatch) => {
@@ -14,4 +14,8 @@ export const setHotConsultAction = payload => ({
 
 export const toggleHeaderPop = () => ({
     type: TOGGLE_HEADER_POP,
+});
+
+export const checkLogin = () => ({
+    type: CHECK_LOGIN,
 });

@@ -1,19 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
-// import Loadable from 'react-loadable';
 import Home from '@/pages/home';
 import Profile from '@/pages/profile';
 import About from '@/pages/about';
 import Auth from '@/pages/auth';
-
-
-// import Loading from './Loading';
-
-// const Order = Loadable({
-//     loader: () => import(/* webpackChunkName: "order" */'../Order/Order'),
-//     loading: Loading,
-// });
 
 class Main extends Component {
     render() {

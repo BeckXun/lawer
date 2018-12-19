@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 // import { NavBar, Icon } from 'antd-mobile';
 import Header from '@/components/Header';
 
-class About extends Component {
+class About extends PureComponent {
     state = {
     }
     render() {
