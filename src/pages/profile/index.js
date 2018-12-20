@@ -10,14 +10,14 @@ import {
     MyList,
     GreyBlock,
 } from './style';
-import { checkLogin } from '@/store/actionCreators';
+import { isLogin } from '@/utils/login';
 
 const Item = List.Item;
 
 class Profile extends PureComponent {
     render() {
-        const { headImg, nickname, authState, isLogin } = this.props;
-        return isLogin ? (
+        const { headImg, nickname, authState } = this.props;
+        return (
             <Main>
                 <Header title="详细资料" />
                 <Top>
@@ -59,12 +59,12 @@ class Profile extends PureComponent {
                     </Item>
                 </MyList>
             </Main>
-        ) : '请登录';
+        );
     }
     componentWillMount() {
-        this.props.checkLogin();
-    }
-    componentDidMount() {
+        if (!isLogin()) {
+            this.props.history.replace('/login');
+        }
     }
 };
 
@@ -72,13 +72,12 @@ const mapState = state => ({
     headImg: state.getIn(['uc', 'headImg']),
     nickname: state.getIn(['uc', 'nickname']),
     authState: state.getIn(['uc', 'authState']),
-    isLogin: state.getIn(['common', 'isLogin']),
 });
 
 const mapDispatch = dispatch => ({
-    checkLogin() {
-        dispatch(checkLogin());
-    },
+    // checkLogin() {
+    //     dispatch(checkLogin());
+    // },
 });
 
 export default connect(mapState, mapDispatch)(Profile);

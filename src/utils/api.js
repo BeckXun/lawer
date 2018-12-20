@@ -13,6 +13,18 @@ export function getHotConsult(params) {
 };
 
 /**
+ * 获取登录验证码
+ *
+ * @param {Object} params 请求参数
+ * @return {axios}
+ */
+export function getVerify(params) {
+    return get('mock/verify.json', {
+        params,
+    });
+};
+
+/**
  * 创建虚拟币提币订单
  *
  * @param {Object} data 请求数据
