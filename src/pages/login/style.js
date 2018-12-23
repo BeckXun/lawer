@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from 'antd-mobile';
+import { Button, InputItem } from 'antd-mobile';
 
 const Main = styled.div`
     position: relative;
@@ -9,15 +9,19 @@ const Main = styled.div`
     padding: 98px 50px 0;
 `;
 
-const Input = styled.input`
+const Input = styled(InputItem)`
     margin-top: ${props => props.mtp + 'px' };
     display: block;
     width: 100%;
     height: 44px;
     box-sizing: border-box;
-    padding: 12px;
+    padding: 8px 12px;
     font-size: 14px;
     border: 1px solid #ddd;
+
+    .am-list-line {
+        border-bottom: none !important;
+    }
 `;
 
 const PwdWrapper = styled.div`

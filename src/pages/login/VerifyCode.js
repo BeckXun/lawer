@@ -9,6 +9,10 @@ class Verify extends PureComponent {
         timer: null,
     }
     verifyHandler = () => {
+        if (!this.props.phoneVerify()) {
+            return;
+        }
+
         if (this.state.timer) {
             return;
         }

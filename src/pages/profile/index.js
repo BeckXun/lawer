@@ -10,13 +10,15 @@ import {
     MyList,
     GreyBlock,
 } from './style';
-import { isLogin } from '@/utils/login';
+import { logout } from '@/utils/login';
+import CheckLogin from '@/components/Login';
 
 const Item = List.Item;
 
 class Profile extends PureComponent {
     render() {
-        const { headImg, nickname, authState } = this.props;
+        const { headImg, nickname, authState, history } = this.props;
+        const { push } = history;
         return (
             <Main>
                 <Header title="详细资料" />
@@ -28,43 +30,42 @@ class Profile extends PureComponent {
                 <MyList className="my-list">
                     <Item
                         arrow="horizontal"
-                        onClick={() => { }}
+                        onClick={() => push('/consult-detail')}
                     >
                         我的咨询
                     </Item>
                     <Item
                         arrow="horizontal"
-                        onClick={() => { }}
+                        onClick={() => push('/msg')}
                     >
                         消息
                     </Item>
                     <Item
                         arrow="horizontal"
-                        onClick={() => { }}
+                        onClick={() => push('/record')}
                     >
                         交易记录
                     </Item>
                     <Item
                         extra={authState}
                         arrow="horizontal"
-                        onClick={() => { }}
+                        onClick={() => push('/auth')}
                     >
                         律师认证
                     </Item>
                     <Item
                         arrow="horizontal"
-                        onClick={() => { }}
-                    >
-                        退出登录
+                        onClick={this.logoutHandler}
+                >
+                    退出登录
                     </Item>
                 </MyList>
             </Main>
         );
     }
-    componentWillMount() {
-        if (!isLogin()) {
-            this.props.history.replace('/login');
-        }
+    logoutHandler = () => {
+        logout();
+        this.props.history.replace('/login');
     }
 };
 
@@ -74,10 +75,4 @@ const mapState = state => ({
     authState: state.getIn(['uc', 'authState']),
 });
 
-const mapDispatch = dispatch => ({
-    // checkLogin() {
-    //     dispatch(checkLogin());
-    // },
-});
-
-export default connect(mapState, mapDispatch)(Profile);
+export default connect(mapState, null)(CheckLogin(Profile));

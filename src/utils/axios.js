@@ -1,6 +1,6 @@
 import axios from 'axios';
 // import { api } from '../config/api';
-// import { clear } from './auth';
+import { logout } from './login';
 
 const service = axios.create({
     timeout: 5000,
@@ -32,15 +32,15 @@ service.interceptors.request.use((config) => {
 }, error => Promise.reject(error));
 
 service.interceptors.response.use((res) => {
-    // if (res.data['err-code'] === 'token-not-valid' || res.data['err-code'] === 'login-required' || res.data.code === 512) {
-    //     // Clear token cookie
-    //     // clear();
+    if (res.data['err-code'] === 'token-not-valid') {
+        // Clear token cookie & logout
+        logout();
 
-    //     // 非预渲染时跳转登录页
-    //     window.location.assign('/login');
+        // 跳转登录页
+        window.location.assign('/login');
 
-    //     return Promise.reject(res.data);
-    // }
+        return Promise.reject(res.data);
+    }
     
     return res.data;
 }, error => Promise.reject(error));

@@ -21,6 +21,8 @@ const Top = styled.div`
 const Avater = styled.img`
     width: 56px;
     height: 56px;
+    border-radius: 50%;
+    border: 1px solid #eee;
 `;
 
 const Name = styled.div`
