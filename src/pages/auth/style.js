@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button, InputItem as input, ImagePicker } from 'antd-mobile';
+import { Button, InputItem as input, ImagePicker as imgPicker, ActivityIndicator } from 'antd-mobile';
 import { Avater as HeadImg, GreyBlock } from '@/pages/profile/style';
 
 const padding = '26px';
@@ -9,10 +9,9 @@ const Body = styled.div`
     height: 100%;
 `;
 
-const Avatar =styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+const Avatar =styled.div.attrs({
+    className: 'flex-between-center',
+})`
     padding: ${padding};
     height: 88px;
 `;
@@ -34,6 +33,8 @@ const Main = styled.div`
 `;
 
 const InputItem = styled(input)`
+    padding-left: 0 !important;
+
     input {
         text-align: right;
     }
@@ -43,32 +44,45 @@ const InputItem = styled(input)`
     }
 `;
 
-const PwdWrapper = styled.div`
-    position: relative;
+const ImagePicker = styled(imgPicker)`
+    width: 152px;
+    display: inline-block;
+
+    .am-image-picker-list {
+        padding: 0;
+        margin-bottom: 0;
+
+        .am-flexbox {
+            margin: 0;
+
+            .am-flexbox-item {
+                margin: 0;
+                height: 94px;
+            }
+        }
+    }
 `;
 
-const Title = styled.div`
-    position: absolute;
-    top: 32px;
-    left: 24px;
-    font-size: 22px;
-`;
-
-const VerifyCode = styled.div`
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 70px;
-    padding: 0 16px;
+const BaseText = styled.div`
     font-size: 14px;
-    line-height: 44px;
-    text-align: center;
+    height: 20px;
+    line-height: 20px;
 `;
 
-const LoginBtn = styled(Button)`
-    margin-top: 45px;
+const UploadTitle = styled(BaseText)`
+    margin: 20px 0 18px;
 `;
+
+const UploadDesc = styled(BaseText)`
+    margin-top: 8px;
+`;
+
+const SubmitBtn = styled(Button)`
+    margin-top: 48px;
+    font-size: 14px;
+`;
+
+const Loading = styled(ActivityIndicator);
 
 export {
     Body,
@@ -80,8 +94,8 @@ export {
     Main,
     InputItem,
     ImagePicker,
-    PwdWrapper,
-    Title,
-    LoginBtn,
-    VerifyCode,
+    UploadTitle,
+    UploadDesc,
+    SubmitBtn,
+    Loading,
 };

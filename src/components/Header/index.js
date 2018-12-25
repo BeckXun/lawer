@@ -3,7 +3,7 @@ import { NavBar, Icon, Popover } from 'antd-mobile';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { toggleHeaderPop } from '@/store/actionCreators'
+import { toggleHeaderPop } from '@/store/actionCreators';
 import './index.scss';
 
 const { Item } = Popover;
@@ -107,16 +107,13 @@ class Header extends PureComponent {
     }
     render() {
         const { type, title } = this.props;
-        const icon = type === 'home' ? null : <Icon type="left" />;
-        const rightContent = this.getRightContent(type);
-        
         return (
             <div>
                 <NavBar
                     mode="light"
-                    icon={icon}
+                    icon={type === 'home' ? null : <Icon type="left" />}
                     onLeftClick={() => this.props.history.goBack()}
-                    rightContent={rightContent}
+                    rightContent={this.getRightContent(type)}
                 >
                     {title}
                 </NavBar>
